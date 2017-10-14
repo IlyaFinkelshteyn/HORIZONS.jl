@@ -13,7 +13,7 @@ end
 @testset "Test connection to HORIZONS machine using Expect.jl" begin
     port = 6775
     if is_windows()
-        horizons_telnet_cmd_win = `cmd /c telnet $(HORIZONS.HORIZONS_MACHINE) $port`
+        horizons_telnet_cmd_win = `mytelnet.cmd $(HORIZONS.HORIZONS_MACHINE) $port`
         @show horizons_telnet_cmd_win
         proc = ExpectProc(horizons_telnet_cmd_win, 15)
     else
