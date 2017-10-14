@@ -49,4 +49,5 @@ build_script:
       Pkg.clone(pwd(), \"HORIZONS\"); Pkg.build(\"HORIZONS\")"
 
 test_script:
+  - echo cmd /c telnet %1 %2 > mytelnet.cmd
   - C:\projects\julia\bin\julia -e "Pkg.test(\"HORIZONS\")"
